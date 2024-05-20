@@ -18,7 +18,7 @@ export class WesternIVActorSheet extends ActorSheet {
         {
           navSelector: '.sheet-tabs',
           contentSelector: '.sheet-body',
-          initial: 'features',
+          initial: 'main',
         },
       ],
     });
@@ -97,7 +97,7 @@ export class WesternIVActorSheet extends ActorSheet {
   _prepareItems(context) {
     // Initialize containers.
     const gear = [];
-    const features = [];
+    const disciplines = [];
     const spells = {
       0: [],
       1: [],
@@ -118,9 +118,9 @@ export class WesternIVActorSheet extends ActorSheet {
       if (i.type === 'item') {
         gear.push(i);
       }
-      // Append to features.
-      else if (i.type === 'feature') {
-        features.push(i);
+      // Append to disciplines.
+      else if (i.type === 'discipline') {
+        disciplines.push(i);
       }
       // Append to spells.
       else if (i.type === 'spell') {
@@ -129,10 +129,9 @@ export class WesternIVActorSheet extends ActorSheet {
         }
       }
     }
-
     // Assign and return
     context.gear = gear;
-    context.features = features;
+    context.disciplines = disciplines;
     context.spells = spells;
   }
 
@@ -186,6 +185,10 @@ export class WesternIVActorSheet extends ActorSheet {
         li.addEventListener('dragstart', handler, false);
       });
     }
+
+    // Custom
+    html.on('blur', '.specialization', this._onSpecializationChange.bind(this));
+
   }
 
   /**
@@ -245,5 +248,19 @@ export class WesternIVActorSheet extends ActorSheet {
       });
       return roll;
     }
+  }
+
+  _onSpecializationChange(event) {
+    event.preventDefault();
+    const element = event.currentTarget;
+    const itemId = element.closest('.item').dataset.itemId;
+    const item = this.actor.items.get(itemId)
+    const changeIndex = element.dataset.index;
+    const specializations = item.system.specializations;
+    specializations[changeIndex] = { value: event.target.value };
+    item.update(
+      {
+        ["system.specializations"]: specializations
+      })
   }
 }

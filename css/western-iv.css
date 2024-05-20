@@ -387,3 +387,10 @@
 .text-align-left {
   text-align: left !important;
 }
+
+.flex-basis-100 {
+  flex-basis: 100%;
+}
+.flex-basis-50 {
+  flex-basis: 50%;
+}

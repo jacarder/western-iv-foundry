@@ -59,7 +59,7 @@
     },
     "Item": {
       "item": "Item",
-      "feature": "Feature",
+      "discipline": "Discipline",
       "spell": "Spell"
     }
   }
