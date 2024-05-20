@@ -5,19 +5,26 @@ export const WESTERN_IV = {};
  * @type {Object}
  */
 WESTERN_IV.abilities = {
-  str: 'WESTERN_IV.Ability.Str.long',
-  dex: 'WESTERN_IV.Ability.Dex.long',
+  col: 'WESTERN_IV.Ability.Col.long',
   con: 'WESTERN_IV.Ability.Con.long',
+  dex: 'WESTERN_IV.Ability.Dex.long',
   int: 'WESTERN_IV.Ability.Int.long',
-  wis: 'WESTERN_IV.Ability.Wis.long',
-  cha: 'WESTERN_IV.Ability.Cha.long',
+  qck: 'WESTERN_IV.Ability.Qck.long',
+  str: 'WESTERN_IV.Ability.Str.long',
+  vig: 'WESTERN_IV.Ability.Vig.long',
 };
 
 WESTERN_IV.abilityAbbreviations = {
-  str: 'WESTERN_IV.Ability.Str.abbr',
-  dex: 'WESTERN_IV.Ability.Dex.abbr',
+  col: 'WESTERN_IV.Ability.Col.abbr',
   con: 'WESTERN_IV.Ability.Con.abbr',
+  dex: 'WESTERN_IV.Ability.Dex.abbr',
   int: 'WESTERN_IV.Ability.Int.abbr',
-  wis: 'WESTERN_IV.Ability.Wis.abbr',
-  cha: 'WESTERN_IV.Ability.Cha.abbr',
+  qck: 'WESTERN_IV.Ability.Qck.abbr',
+  str: 'WESTERN_IV.Ability.Str.abbr',
+  vig: 'WESTERN_IV.Ability.Vig.abbr',
+};
+
+WESTERN_IV.weaponHands = {
+  right: 'WESTERN_IV.WeaponHands.Right',
+  left: 'WESTERN_IV.WeaponHands.Left',
 };

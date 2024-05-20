@@ -46,6 +46,9 @@ export class WesternIVActorSheet extends ActorSheet {
     context.system = actorData.system;
     context.flags = actorData.flags;
 
+    // Custom
+    context.weaponHandOptions = CONFIG.WESTERN_IV.weaponHands
+
     // Prepare character data and items.
     if (actorData.type == 'character') {
       this._prepareItems(context);

@@ -23,6 +23,26 @@ export default class WesternIVCharacter extends WesternIVActorBase {
       return obj;
     }, {}));
 
+    //  Custom
+    schema.nameRep = new fields.SchemaField({
+      honor: new fields.NumberField({ ...requiredInteger, initial: 1 }),
+      fame: new fields.NumberField({ ...requiredInteger, initial: 0 })
+    });
+    schema.aliasRep = new fields.SchemaField({
+      honor: new fields.NumberField({ ...requiredInteger, initial: 1 }),
+      fame: new fields.NumberField({ ...requiredInteger, initial: 0 })
+    });
+    schema.groupRep = new fields.SchemaField({
+      honor: new fields.NumberField({ ...requiredInteger, initial: 1 }),
+      fame: new fields.NumberField({ ...requiredInteger, initial: 0 })
+    });
+
+    schema.alias = new fields.StringField({ required: true, blank: true });
+    schema.group = new fields.StringField({ required: true, blank: true });
+    schema.role = new fields.StringField({ required: true, blank: true });
+    schema.education = new fields.StringField({ required: true, blank: true });
+    schema.weaponHand = new fields.StringField({ required: true, initial: 'right' });
+
     return schema;
   }
 
@@ -42,7 +62,7 @@ export default class WesternIVCharacter extends WesternIVActorBase {
     // Copy the ability scores to the top level, so that rolls can use
     // formulas like `@str.mod + 4`.
     if (this.abilities) {
-      for (let [k,v] of Object.entries(this.abilities)) {
+      for (let [k, v] of Object.entries(this.abilities)) {
         data[k] = foundry.utils.deepClone(v);
       }
     }

@@ -6,7 +6,8 @@
 export const preloadHandlebarsTemplates = async function () {
   return loadTemplates([
     // Actor partials.
-    'systems/western-iv/templates/actor/parts/actor-features.hbs',
+    'systems/western-iv/templates/actor/parts/actor-main.hbs',
+    'systems/western-iv/templates/actor/parts/actor-moves-specializations.hbs',
     'systems/western-iv/templates/actor/parts/actor-items.hbs',
     'systems/western-iv/templates/actor/parts/actor-spells.hbs',
     'systems/western-iv/templates/actor/parts/actor-effects.hbs',

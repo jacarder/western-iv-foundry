@@ -1,12 +1,38 @@
 {
   "WESTERN_IV": {
     "Ability": {
-      "Str": { "long": "Strength", "abbr": "str" },
-      "Con": { "long": "Constitution", "abbr": "con" },
-      "Dex": { "long": "Dexterity", "abbr": "dex" },
-      "Int": { "long": "Intelligence", "abbr": "int" },
-      "Wis": { "long": "Wisdom", "abbr": "wis" },
-      "Cha": { "long": "Charisma", "abbr": "cha" }
+      "Col": {
+        "long": "Cool",
+        "abbr": "str"
+      },
+      "Con": {
+        "long": "Constitution",
+        "abbr": "con"
+      },
+      "Dex": {
+        "long": "Dexterity",
+        "abbr": "dex"
+      },
+      "Int": {
+        "long": "Intelligence",
+        "abbr": "int"
+      },
+      "Qck": {
+        "long": "Quickness",
+        "abbr": "qck"
+      },
+      "Str": {
+        "long": "Strength",
+        "abbr": "str"
+      },
+      "Vig": {
+        "long": "Vigilance",
+        "abbr": "vig"
+      }
+    },
+    "WeaponHands": {
+      "Left": "Left",
+      "Right": "Right"
     },
     "SheetLabels": {
       "Actor": "WesternIV Actor Sheet",
@@ -26,7 +52,6 @@
       "Inactive": "Inactive Effects"
     }
   },
-
   "TYPES": {
     "Actor": {
       "character": "Character",
