@@ -28,3 +28,22 @@ WESTERN_IV.weaponHands = {
   right: 'WESTERN_IV.WeaponHands.Right',
   left: 'WESTERN_IV.WeaponHands.Left',
 };
+
+WESTERN_IV.attackMoves = {
+  cut: 'WESTERN_IV.AttackMoves.cut',
+  disarm: 'WESTERN_IV.AttackMoves.disarm',
+  feint: 'WESTERN_IV.AttackMoves.feint',
+  headbutt: 'WESTERN_IV.AttackMoves.headbutt',
+  hold: 'WESTERN_IV.AttackMoves.hold',
+  kick: 'WESTERN_IV.AttackMoves.kick',
+  strike: 'WESTERN_IV.AttackMoves.strike',
+  throw: 'WESTERN_IV.AttackMoves.throw',
+  thrust: 'WESTERN_IV.AttackMoves.thrust',
+  trip: 'WESTERN_IV.AttackMoves.trip',
+};
+
+WESTERN_IV.defenseMoves = {
+  break: 'WESTERN_IV.DefenseMoves.break',
+  evade: 'WESTERN_IV.DefenseMoves.evade',
+  parry: 'WESTERN_IV.DefenseMoves.parry',
+}

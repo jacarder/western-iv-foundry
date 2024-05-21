@@ -43,6 +43,16 @@ export default class WesternIVCharacter extends WesternIVActorBase {
     schema.education = new fields.StringField({ required: true, blank: true });
     schema.weaponHand = new fields.StringField({ required: true, initial: 'right' });
 
+
+    schema.moves = new fields.ObjectField({
+      initial: {
+        primary: null,
+        secondary: [], // Holds key of either attack or defense
+        attack: Object.entries(CONFIG.WESTERN_IV.attackMoves).reduce((obj, [key, label]) => ({ ...obj, ...{ [key]: { label, value: 0 } } }), {}),
+        defense: Object.entries(CONFIG.WESTERN_IV.defenseMoves).reduce((obj, [key, label]) => ({ ...obj, ...{ [key]: { label, value: 0 } } }), {}),
+      }
+    });
+
     return schema;
   }
 

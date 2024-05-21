@@ -34,6 +34,23 @@
       "Left": "Left",
       "Right": "Right"
     },
+    "AttackMoves": {
+      "cut": "Cut",
+      "disarm": "Disarm",
+      "feint": "Feint",
+      "headbutt": "Headbutt",
+      "hold": "Hold",
+      "kick": "Kick",
+      "strike": "Strike",
+      "throw": "Throw",
+      "thrust": "Thrust",
+      "trip": "Trip"
+    },
+    "DefenseMoves": {
+      "break": "Break",
+      "evade": "Evade",
+      "parry": "Parry"
+    },
     "SheetLabels": {
       "Actor": "WesternIV Actor Sheet",
       "Item": "WesternIV Item Sheet"

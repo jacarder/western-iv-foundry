@@ -1,4 +1,37 @@
 <h3>Moves / Specializations</h3>
+<div>
+  <div class="grid">
+    <span class="resource-label">Attack</span>
+    <div class="grid grid-5col flex-group-center">
+      {{#each system.moves.attack as |move id|}}
+      <div>
+        <label for="system.moves.attack.{{id}}.value" class="rollable" data-roll="d20+{{move.value}}"
+          data-label="{{localize move.label}}">
+          {{localize move.label}}
+        </label>
+        <input type="text" name="system.moves.attack.{{id}}.value" value="{{move.value}}" data-dtype="Number" />
+      </div>
+      {{/each}}
+    </div>
+  </div>
+  <hr>
+  <div class="grid">
+    <span class="resource-label">Defense</span>
+    <div class="grid grid-5col flex-group-center">
+      {{#each system.moves.defense as |move id|}}
+      <div>
+        <label for="system.moves.defense.{{id}}.value" class="rollable" data-roll="d20+{{move.value}}"
+          data-label="{{localize move.label}}">
+          {{localize move.label}}
+        </label>
+        <input type="text" name="system.moves.defense.{{id}}.value" value="{{move.value}}" data-dtype="Number" />
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
+<hr>
+<span class="resource-label">Disciplines</span>
 <ol class='items-list'>
   {{#each disciplines as |item id|}}
   <li class='item flexrow' data-item-id='{{item._id}}'>
@@ -30,4 +63,3 @@
   </li>
   {{/each}}
 </ol>
-{{log system}}
