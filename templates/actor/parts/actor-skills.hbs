@@ -1,0 +1,27 @@
+<div class='items-list grid grid-2col'>
+  {{#each skills as |skill id|}}
+  <div class="item" data-item-id='{{skill._id}}'>
+    <div class='item-name'>
+      <h4>{{skill.name}}</h4>
+    </div>
+    <div>
+      <div class="">
+        {{skill.system.relatedAttributes}}
+      </div>
+      <div class="flexcol">
+        <label>PR</label>
+        <input type="text" class="practice-points" value="{{skill.system.practicePoints}}" />
+      </div>
+      {{skill.system.totalPoints}}
+    </div>
+    <div class='item-controls'>
+      <a class='item-control item-edit' title='{{localize "DOCUMENT.Update" type=' Skill'}}'>
+        <i class='fas fa-edit'></i>
+      </a>
+      <a class='item-control item-delete' title='{{localize "DOCUMENT.Delete" type=' Skill'}}'>
+        <i class='fas fa-trash'></i>
+      </a>
+    </div>
+  </div>
+  {{/each}}
+</div>

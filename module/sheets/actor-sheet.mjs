@@ -97,6 +97,7 @@ export class WesternIVActorSheet extends ActorSheet {
   _prepareItems(context) {
     // Initialize containers.
     const gear = [];
+    const skills = [];
     const disciplines = [];
     const spells = {
       0: [],
@@ -118,6 +119,9 @@ export class WesternIVActorSheet extends ActorSheet {
       if (i.type === 'item') {
         gear.push(i);
       }
+      else if (i.type === 'skill') {
+        skills.push(i)
+      }
       // Append to disciplines.
       else if (i.type === 'discipline') {
         disciplines.push(i);
@@ -131,6 +135,7 @@ export class WesternIVActorSheet extends ActorSheet {
     }
     // Assign and return
     context.gear = gear;
+    context.skills = skills;
     context.disciplines = disciplines;
     context.spells = spells;
   }
@@ -188,6 +193,8 @@ export class WesternIVActorSheet extends ActorSheet {
 
     // Custom
     html.on('blur', '.specialization', this._onSpecializationChange.bind(this));
+
+    html.on('blur', '.practice-points', this._onPracticePointsChange.bind(this));
 
   }
 
@@ -261,6 +268,23 @@ export class WesternIVActorSheet extends ActorSheet {
     item.update(
       {
         ["system.specializations"]: specializations
+      })
+  }
+
+  async _onPracticePointsChange(event) {
+    event.preventDefault();
+    const element = event.currentTarget;
+    const itemId = element.closest('.item').dataset.itemId;
+    const item = this.actor.items.get(itemId);
+    await item.update(
+      {
+        ["system.practicePoints"]: +event.target.value,
+      })
+    console.log(item, item.system.relatedAttributes.split(','))
+    await item.update(
+      {
+        //  send params to getTotalPoints
+        ["system.totalPoints"]: item.system.getTotalPoints(this.actor, item.system.relatedAttributes.split(','))
       })
   }
 }

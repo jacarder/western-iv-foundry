@@ -48,6 +48,7 @@ Hooks.once('init', function () {
   CONFIG.Item.documentClass = WesternIVItem;
   CONFIG.Item.dataModels = {
     item: models.WesternIVItem,
+    skill: models.WesternIVSkill,
     discipline: models.WesternIVDiscipline,
     spell: models.WesternIVSpell
   }

@@ -59,8 +59,8 @@ export default class WesternIVCharacter extends WesternIVActorBase {
   prepareDerivedData() {
     // Loop through ability scores, and add their modifiers to our sheet output.
     for (const key in this.abilities) {
-      // Calculate the modifier using d20 rules.
-      this.abilities[key].mod = Math.floor((this.abilities[key].value - 10) / 2);
+      const bonusChart = [-5, -4, -3, -3, -2, -2, -1, -1, 0, 0, 0, 0, 1, 1, 2, 2, 3, 3, 4, 5];
+      this.abilities[key].mod = bonusChart[this.abilities[key].value - 1]
       // Handle ability label localization.
       this.abilities[key].label = game.i18n.localize(CONFIG.WESTERN_IV.abilities[key]) ?? key;
     }
@@ -81,4 +81,7 @@ export default class WesternIVCharacter extends WesternIVActorBase {
 
     return data
   }
+
+  // TODO move out
+  calculateAbilityMod
 }

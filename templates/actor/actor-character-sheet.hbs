@@ -83,6 +83,7 @@
     {{!-- Default tab is specified in actor-sheet.mjs --}}
     <a class="item" data-tab="main">Main</a>
     <a class="item" data-tab="description">Description</a>
+    <a class="item" data-tab="skills">Skills</a>
     <a class="item" data-tab="items">Items</a>
     <a class="item" data-tab="spells">Spells</a>
     <a class="item" data-tab="effects">Effects</a>
@@ -129,6 +130,11 @@
       {{editor system.biography target="system.biography" rollData=rollData button=true owner=owner editable=editable}}
     </div>
 
+    {{!-- Skills Tab --}}
+    <div class="tab skills" data-group="primary" data-tab="skills">
+      {{> "systems/western-iv/templates/actor/parts/actor-skills.hbs"}}
+    </div>
+
     {{!-- Owned Items Tab --}}
     <div class="tab items" data-group="primary" data-tab="items">
       {{> "systems/western-iv/templates/actor/parts/actor-items.hbs"}}
@@ -146,5 +152,3 @@
 
   </section>
 </form>
-
-{{log system}}

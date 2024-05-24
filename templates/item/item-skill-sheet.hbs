@@ -3,14 +3,22 @@
     <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
     <div class="header-fields">
       <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name" /></h1>
-      <div class="grid grid-2col">
-        <div class="resource">
-          <label class="resource-label">Quantity</label>
-          <input type="text" name="system.quantity" value="{{system.quantity}}" data-dtype="Number" />
+      <div class="grid grid-3col">
+        <div>
+          <label class="resource-label">Requires Practice</label>
+          <input type="checkbox" name="system.requiresPractice" {{checked system.requiresPractice}} />
         </div>
-        <div class="resource">
-          <label class="resource-label">Weight</label>
-          <input type="text" name="system.weight" value="{{system.weight}}" data-dtype="Number" />
+        <div>
+          <label class="resource-label">Related Attributes</label>
+          <input type="text" name="system.relatedAttributes" value="{{system.relatedAttributes}}" data-dtype="String" />
+        </div>
+        <div>
+          <label class="resource-label">Skill Group</label>
+          <input type="text" name="system.skillGroup" value="{{system.skillGroup}}" data-dtype="String" />
+        </div>
+        <div>
+          <label class="resource-label">Skill Point Group</label>
+          <input type="text" name="system.skillPointGroup" value="{{system.skillPointGroup}}" data-dtype="Number" />
         </div>
       </div>
     </div>

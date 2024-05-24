@@ -8,6 +8,7 @@
   "Item": {
     "types": [
       "item",
+      "skill",
       "discipline",
       "spell"
     ]

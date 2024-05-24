@@ -76,6 +76,7 @@
     },
     "Item": {
       "item": "Item",
+      "skill": "Skill",
       "discipline": "Discipline",
       "spell": "Spell"
     }
