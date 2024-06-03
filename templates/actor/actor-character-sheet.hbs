@@ -7,12 +7,22 @@
       <div>
         <div class="flexcol m-bottom-1">
           <div class="flexrow flex-between">
+            <div class="flexrow flexlarge flex-group-center"></div>
+            <div class="flexrow flex-group-center flex-between">
+              <span>Honor</span>
+              <span class="flex1"></span>
+              <span>Fame</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flexcol m-bottom-1">
+          <div class="flexrow flex-between">
             <div class="flexrow flexlarge flex-group-center">
               <label class="flex0">Name: </label>
               <input name="name" type="text" class="flexlarge text-align-left" value="{{actor.name}}" />
             </div>
-            <div class="flexrow flex-group-center">
-              <label class="flex0 m-start-1">Reputation: </label>
+            <div class="flexrow flex-group-center m-start-1">
               <input type="text" name="system.nameRep.honor" value="{{system.nameRep.honor}}" data-dtype="Number"
                 width="50px" />
               <span class="flex1"> / </span>
@@ -27,8 +37,7 @@
               <label class="flex0">Alias: </label>
               <input name="system.alias" type="text" class="flexlarge text-align-left" value="{{system.alias}}" />
             </div>
-            <div class="flexrow flex-group-center">
-              <label class="flex0 m-start-1">Reputation: </label>
+            <div class="flexrow flex-group-center m-start-1">
               <input type="text" name="system.aliasRep.honor" value="{{system.aliasRep.honor}}" data-dtype="Number"
                 width="50px" />
               <span class="flex1"> / </span>
@@ -43,8 +52,7 @@
               <label class="flex0">Group: </label>
               <input name="system.group" type="text" class="flexlarge text-align-left" value="{{system.group}}" />
             </div>
-            <div class="flexrow flex-group-center">
-              <label class="flex0 m-start-1">Reputation: </label>
+            <div class="flexrow flex-group-center m-start-1">
               <input type="text" name="system.groupRep.honor" value="{{system.groupRep.honor}}" data-dtype="Number"
                 width="50px" />
               <span class="flex1"> / </span>
