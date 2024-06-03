@@ -1,18 +1,23 @@
 <div class='items-list grid grid-2col'>
   {{#each skills as |skill id|}}
-  <div class="item" data-item-id='{{skill._id}}'>
+  <div class="item flexrow flex-between flex-nowrap" data-item-id='{{skill._id}}'>
     <div class='item-name'>
-      <h4>{{skill.name}}</h4>
+      <h4 class="rollable" data-roll-type="item">{{skill.name}}</h4>
     </div>
-    <div>
-      <div class="">
-        {{skill.system.relatedAttributes}}
-      </div>
-      <div class="flexcol">
-        <label>PR</label>
-        <input type="text" class="practice-points" value="{{skill.system.practicePoints}}" />
-      </div>
-      {{skill.system.totalPoints}}
+    <div class="flexrow flex-nowrap">
+      {{#each (splitCommaToArray skill.system.relatedAttributes) as |abbr|}}
+      {{abbr}}
+      {{/each}}
+    </div>
+    <div class="flexrow flex-group-center flex-nowrap m-start-1 m-end-1">
+      <label>PR</label>
+      <input type="text" class="practice-points m-start-1" value="{{skill.system.practicePoints}}" />
+    </div>
+    <div class="flexrow nowrap m-end-1">
+      <span>= {{skill.system.totalPoints}}</span>
+    </div>
+    <div class="flexrow">
+      <input data-roll-type="item" class="rollable" type="button" value="Roll">
     </div>
     <div class='item-controls'>
       <a class='item-control item-edit' title='{{localize "DOCUMENT.Update" type=' Skill'}}'>

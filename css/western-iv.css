@@ -288,7 +288,7 @@
 .western-iv .items-list .item-name {
   flex: 2;
   margin: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
   font-size: 13px;
   text-align: left;
   align-items: center;
@@ -302,7 +302,7 @@
 }
 .western-iv .items-list .item-controls {
   display: flex;
-  flex: 0 0 100px;
+  /* flex: 0 0 100px; */
   justify-content: flex-end;
 }
 .western-iv .items-list .item-controls a {
@@ -372,16 +372,16 @@
 }
 
 .m-start-1 {
-  margin-left: 10px;
+  margin-left: 10px !important;
 }
 .m-end-1 {
-  margin-right: 10px;
+  margin-right: 10px !important;
 }
 .m-bottom-1 {
-  margin-bottom: 10px;
+  margin-bottom: 10px !important;
 }
 .m-1 {
-  margin: 10px;
+  margin: 10px !important;
 }
 
 .text-align-left {
@@ -393,4 +393,16 @@
 }
 .flex-basis-50 {
   flex-basis: 50%;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+input.practice-points {
+  min-width: 30px;
+}
+
+.nowrap {
+  white-space: nowrap !important;
 }

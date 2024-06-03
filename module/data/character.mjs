@@ -70,6 +70,7 @@ export default class WesternIVCharacter extends WesternIVActorBase {
       for (let i of skills) {
         //  Update total points for each skill related to the attribute
         i.system.totalPoints = i.system.getTotalPoints(this.parent, i.system.relatedAttributes.split(','))
+        i.system.setFormula();
       }
     }
 
