@@ -4,9 +4,9 @@
     <div class='item-name'>
       <h4 class="rollable" data-roll-type="item">{{skill.name}}</h4>
     </div>
-    <div class="flexrow flex-nowrap">
+    <div class="flexrow flex-nowrap m-start-1">
       {{#each (splitCommaToArray skill.system.relatedAttributes) as |abbr|}}
-      {{abbr}}
+      {{toUpperCase abbr}}
       {{/each}}
     </div>
     <div class="flexrow flex-group-center flex-nowrap m-start-1 m-end-1">
