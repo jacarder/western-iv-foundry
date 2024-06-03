@@ -193,7 +193,6 @@ export class WesternIVActorSheet extends ActorSheet {
 
     // Custom
     html.on('blur', '.specialization', this._onSpecializationChange.bind(this));
-
     html.on('blur', '.practice-points', this._onPracticePointsChange.bind(this));
 
   }
@@ -271,20 +270,14 @@ export class WesternIVActorSheet extends ActorSheet {
       })
   }
 
-  async _onPracticePointsChange(event) {
+  _onPracticePointsChange(event) {
     event.preventDefault();
     const element = event.currentTarget;
     const itemId = element.closest('.item').dataset.itemId;
     const item = this.actor.items.get(itemId);
-    await item.update(
+    item.update(
       {
         ["system.practicePoints"]: +event.target.value,
-      })
-    console.log(item, item.system.relatedAttributes.split(','))
-    await item.update(
-      {
-        //  send params to getTotalPoints
-        ["system.totalPoints"]: item.system.getTotalPoints(this.actor, item.system.relatedAttributes.split(','))
       })
   }
 }

@@ -18,7 +18,8 @@ export default class WesternIVCharacter extends WesternIVActorBase {
       obj[ability] = new fields.SchemaField({
         value: new fields.NumberField({ ...requiredInteger, initial: 10, min: 0 }),
         mod: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0 }),
-        label: new fields.StringField({ required: true, blank: true })
+        label: new fields.StringField({ required: true, blank: true }),
+        abbreviation: new fields.StringField({ required: true, initial: Object.keys(CONFIG.WESTERN_IV.abilityAbbreviations).find(key => key === ability) })
       });
       return obj;
     }, {}));
@@ -64,6 +65,14 @@ export default class WesternIVCharacter extends WesternIVActorBase {
       // Handle ability label localization.
       this.abilities[key].label = game.i18n.localize(CONFIG.WESTERN_IV.abilities[key]) ?? key;
     }
+    for (let [key, ability] of Object.entries(this.abilities)) {
+      const skills = this.parent.items.filter(x => x.type === 'skill' && x.system.relatedAttributes.split(',').includes(ability.abbreviation));
+      for (let i of skills) {
+        //  Update total points for each skill related to the attribute
+        i.system.totalPoints = i.system.getTotalPoints(this.parent, i.system.relatedAttributes.split(','))
+      }
+    }
+
   }
 
   getRollData() {
