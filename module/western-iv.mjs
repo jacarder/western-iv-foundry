@@ -9,6 +9,8 @@ import { preloadHandlebarsTemplates } from './helpers/templates.mjs';
 import { WESTERN_IV } from './helpers/config.mjs';
 // Import DataModel classes
 import * as models from './data/_module.mjs';
+// Import Tools
+import './tools/ToHitUtility/toHitUtility.mjs';
 
 /* -------------------------------------------- */
 /*  Init Hook                                   */
@@ -69,7 +71,8 @@ Hooks.once('init', function () {
     makeDefault: true,
     label: 'WESTERN_IV.SheetLabels.Item',
   });
-
+  console.log("DATA: Called")
+  //toHitUtility.init();
   // Preload Handlebars templates.
   return preloadHandlebarsTemplates();
 });
